@@ -11,11 +11,12 @@
 <%
 name=request.getParameter("name");
 password=request.getParameter("password");
-if(!(name=="vivek" && password=="1234"))
+if((name=="vivek" && password=="1234"))
 {
 	session =request.getSession(false);
 	if(session.isNew())
 	{
+		session.setAttribute("username",name);
 		out.println("welcome to my website "+name);
 	}
 	
