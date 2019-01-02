@@ -11,9 +11,10 @@
 <%
 name=request.getParameter("name");
 password=request.getParameter("password");
-if((name=="vivek" && password=="1234"))
+out.println(name+" "+password);
+if(name.equals("qwerty") && password.equals("1234"))
 {
-	session =request.getSession(false);
+	session =request.getSession(true);
 	if(session.isNew())
 	{
 		session.setAttribute("username",name);
@@ -23,7 +24,8 @@ if((name=="vivek" && password=="1234"))
 	else
 	{
 		out.println("welcome back to my website "+name);
-	}}
+	}
+	}
 else
 {
 	out.println("invalid username and password");
